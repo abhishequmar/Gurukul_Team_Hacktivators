@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1002055219118",
+    "project_id": "gurukul-d641b",
+    "storage_bucket": "gurukul-d641b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002055219118:android:ef424e6bcc9f373a6aba3f",
+        "android_client_info": {
+          "package_name": "com.example.gurukul_team_hacktivators"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002055219118-cknfs026krb35ule2g2ovijn55eit97h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbbztyE-iESdnNLedmFyrcHoIc-aanHgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002055219118-cknfs026krb35ule2g2ovijn55eit97h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
