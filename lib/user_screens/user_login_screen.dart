@@ -90,7 +90,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
 
     );
     final loginButton =Material(
-      color: Colors.lightBlue,
+      color: Colors.purple,
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
@@ -135,14 +135,14 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Don't have an account?"),
+                        Text("Don't have an account? "),
                         GestureDetector(
                           onTap: (){
                             Navigator.push(context, MaterialPageRoute(builder: (context) => UserRegistrationScreen()));
                           },
-                          child: Text("Singup",
+                          child: Text("Sign Up",
                             style: TextStyle(
-                              color: Colors.blueAccent,
+                              color: Colors.purple,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

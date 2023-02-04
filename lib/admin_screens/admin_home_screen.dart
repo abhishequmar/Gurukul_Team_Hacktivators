@@ -1,7 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../first_screen.dart';
+import 'package:gurukul_team_hacktivators/admin_screens/course_seeing_screens/beginner_tech_seeing.dart';
+import 'package:gurukul_team_hacktivators/admin_screens/course_seeing_screens/inter_soft_seeing.dart';
+import 'package:gurukul_team_hacktivators/first_screen.dart';
+import 'course_seeing_screens/adv_soft_seeing.dart';
+import 'course_seeing_screens/adv_tech_seeing.dart';
+import 'course_seeing_screens/begin_soft_seeing.dart';
+import 'course_seeing_screens/inter_tech_seeing.dart';
 
 class AdminHomeScreen extends StatefulWidget {
   const AdminHomeScreen({Key? key}) : super(key: key);
@@ -13,68 +18,8 @@ class AdminHomeScreen extends StatefulWidget {
 class _AdminHomeScreenState extends State<AdminHomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final nonTechSkillsPageButton = Material(
-      color: Colors.green,
-      elevation: 0,
-      borderRadius: BorderRadius.circular(30),
-      child: MaterialButton(
-        elevation: 0,
-        splashColor: Colors.green,
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width *0.80,
-
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) =>
-            const UserLoginScreen(),
-          ),
-        ),
-        child: Text(
-          "Continue As A User",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold,
-          ),
-        ),
-
-      ),
-
-    );
-    final techSkillsPage = Material(
-      color: Colors.green,
-      elevation: 0,
-      borderRadius: BorderRadius.circular(30),
-      child: MaterialButton(
-        elevation: 0,
-        splashColor: Colors.green,
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        minWidth: MediaQuery
-            .of(context)
-            .size
-            .width *0.80,
-
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) =>
-            const UserLoginScreen(),
-          ),
-        ),
-        child: Text(
-          "Continue As A User",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold,
-          ),
-        ),
-
-      ),
-
-    );
     return Scaffold(
-      appBar: AppBar(title: Text('Admin Home Screen')),
+      appBar: AppBar(title: Text('Admin Home Screen'),),
       drawer: Drawer(
 
         width: MediaQuery.of(context).size.width * 0.5,
@@ -90,10 +35,96 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
           ],
         ),
       ),
-
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: 10,),
+            TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return BeginnerSoftSkillSeeingScreen();
+                        }
+                    ),
+                  );
+                },
+                child: Text('Beginner Soft Skills')),
+            SizedBox(height: 10,),
+            TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return IntermediateSoftSkillSeeingScreen();
+                        }
+                    ),
+                  );
+                },
+                child: Text('Intermediate Soft Skills')),
+            SizedBox(height: 10,),
+            TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return AdvanceSoftSkillSeeingScreen();
+                        }
+                    ),
+                  );
+                },
+                child: Text('Advance Soft Skills')),
+            SizedBox(height: 10,),
+            TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return BeginnerTechSkillSeeingScreen();
+                        }
+                    ),
+                  );
+                },
+                child: Text('Beginner Tech Skills')),
+            SizedBox(height: 10,),
+            TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return IntermediateTechSkillSeeingScreen();
+                        }
+                    ),
+                  );
+                },
+                child: Text('Intermediate Tech Skills')),
+            SizedBox(height: 10,),
+            TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return AdvanceTechSkillSeeingScreen();
+                        }
+                    ),
+                  );
+                },
+                child: Text('Advance Tech Skills')),
+            SizedBox(height: 10,),
+
+            SizedBox(height: 10,),
+            SizedBox(height: 10,),
+
+
+
+
 
           ],
         ),
@@ -107,4 +138,3 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
         MaterialPageRoute(builder: (context) => FirstScreen()));
   }
 }
-

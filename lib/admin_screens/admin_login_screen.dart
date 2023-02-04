@@ -86,7 +86,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
 
     );
     final loginButton =Material(
-      color: Colors.lightBlue,
+      color: Colors.purple,
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(

@@ -16,12 +16,13 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     final userLoginButton = Material(
-      color: Colors.green,
+      color: Colors.purple,
       elevation: 0,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         elevation: 0,
-        splashColor: Colors.green,
+
+        splashColor: Colors.deepPurple,
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery
             .of(context)
@@ -46,13 +47,13 @@ class _FirstScreenState extends State<FirstScreen> {
 
     );
     final adminLoginButton = Material(
-      color: Colors.green,
+      color: Colors.purple,
       elevation: 0,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         elevation: 0,
 
-        splashColor: Colors.green,
+        splashColor: Colors.deepPurple,
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery
             .of(context)

@@ -172,7 +172,7 @@ class _UserRegistrationScreenState extends State<UserRegistrationScreen> {
 
     );
     final signupButton =Material(
-      color: Colors.lightBlue,
+      color: Colors.purple,
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
@@ -184,7 +184,7 @@ class _UserRegistrationScreenState extends State<UserRegistrationScreen> {
           signUp(emailEditingController.text, passwordEditingController.text);
         },
         child: Text(
-          "Signup",
+          "Sign Up",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold,
