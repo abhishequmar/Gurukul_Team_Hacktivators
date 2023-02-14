@@ -38,7 +38,7 @@ class _DataEntryScreenState extends State<DataEntryScreen> {
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.account_circle),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Name of the Scheme",
+          hintText: "Name of the Course",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -58,7 +58,7 @@ class _DataEntryScreenState extends State<DataEntryScreen> {
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.web_rounded),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Link of the course",
+          hintText: "Link of the Course",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )

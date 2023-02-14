@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 var docid ="";
 
@@ -10,6 +11,7 @@ class BeginnerTechSkillsScreen extends StatefulWidget {
 
 class _BeginnerTechSkillsScreenState extends State<BeginnerTechSkillsScreen> {
   List<String> _data = [];
+  List<String> _link = [];
 
   @override
   void initState() {
@@ -24,6 +26,7 @@ class _BeginnerTechSkillsScreenState extends State<BeginnerTechSkillsScreen> {
         // Add the data to the list
         setState(() {
           _data.add(data["Name"]);
+          _link.add(data["Link"]);
         });
       });
     });
@@ -41,21 +44,22 @@ class _BeginnerTechSkillsScreenState extends State<BeginnerTechSkillsScreen> {
       appBar: AppBar(
         title: Text('Beginner Tech Skills'),
       ),
-      body: ListView.builder(
-        itemCount: _data.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(_data[index]),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
+      body: SizedBox(
+        height: 500,
+        child: ListView.builder(
+          itemCount: _data.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(_data[index]),
+              leading: IconButton(
+                onPressed: (){
+                  //launchUrl(Uri.parse(_link[index]));
+                },
+                icon: Icon(Icons.link_rounded),),
 
-
-              ],
-            ),
-
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

@@ -140,8 +140,8 @@ class _IntermediateSoftSkillAddingScreenState extends State<IntermediateSoftSkil
     );
   }
   Future createCourse({required String name, required String link}) async {
-    final docCourse = FirebaseFirestore.instance.collection('advancedsoftskills').doc();
-    final docRef = docCourse.collection('advancedsoftskills').doc();
+    final docCourse = FirebaseFirestore.instance.collection('intermediatesoftskills').doc();
+    final docRef = docCourse.collection('intermediatesoftskills').doc();
     final json ={
       'Name': name,
       'Link': link,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 var docid ="";
 
@@ -10,6 +11,7 @@ class IntermediateTechSkillsScreen extends StatefulWidget {
 
 class _IntermediateTechSkillsScreenState extends State<IntermediateTechSkillsScreen> {
   List<String> _data = [];
+  List<String> _link = [];
 
   @override
   void initState() {
@@ -24,6 +26,7 @@ class _IntermediateTechSkillsScreenState extends State<IntermediateTechSkillsScr
         // Add the data to the list
         setState(() {
           _data.add(data["Name"]);
+          _link.add(data["Link"]);
         });
       });
     });
@@ -39,7 +42,7 @@ class _IntermediateTechSkillsScreenState extends State<IntermediateTechSkillsScr
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Intermediate Technical Skills'),
+        title: Text('Intermediate Technical Skill Courses'),
       ),
       body: ListView.builder(
         itemCount: _data.length,
@@ -47,13 +50,12 @@ class _IntermediateTechSkillsScreenState extends State<IntermediateTechSkillsScr
           final documentReference = FirebaseFirestore.instance.collection("Courses").doc(index.toString());
           return ListTile(
             title: Text(_data[index]),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-
-
-              ],
-            ),
+            trailing: IconButton(
+              icon: Icon(Icons.link_rounded),
+              onPressed: (){
+                launchUrl(Uri.parse(_link[index]));
+              },
+            )
 
           );
         },

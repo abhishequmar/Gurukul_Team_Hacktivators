@@ -31,22 +31,7 @@ class _BeginnerSoftSkillSeeingScreenState extends State<BeginnerSoftSkillSeeingS
     });
   }
   // function to delete a document
-  void _deleteDocument(String fieldName) async {
-    final firestore = FirebaseFirestore.instance;
-    // Delete the document that contains the given field name
-    await firestore.collection("Courses")
-        .where("Name", isEqualTo: fieldName)
-        .get()
-        .then((querySnapshot) {
-      querySnapshot.docs.forEach((result) {
-        result.reference.delete();
-      });
-    });
-    // Remove the data from the list
-    setState(() {
-      _data.remove(fieldName);
-    });
-  }
+
 
 
   // function to update a document
@@ -66,7 +51,7 @@ class _BeginnerSoftSkillSeeingScreenState extends State<BeginnerSoftSkillSeeingS
             child: ListView.builder(
               itemCount: _data.length,
               itemBuilder: (context, index) {
-                final documentReference = FirebaseFirestore.instance.collection("advancedsoftskills").doc(index.toString());
+                final documentReference = FirebaseFirestore.instance.collection("beginnersoftskills").doc(index.toString());
                 return ListTile(
                   title: Text(_data[index]),
                   trailing: Row(
@@ -124,6 +109,22 @@ class _BeginnerSoftSkillSeeingScreenState extends State<BeginnerSoftSkillSeeingS
         ],
       ),
     );
+  }
+  void _deleteDocument(String fieldName) async {
+    final firestore = FirebaseFirestore.instance;
+    // Delete the document that contains the given field name
+    await firestore.collection("beginnersoftskills")
+        .where("Name", isEqualTo: fieldName)
+        .get()
+        .then((querySnapshot) {
+      querySnapshot.docs.forEach((result) {
+        result.reference.delete();
+      });
+    });
+    // Remove the data from the list
+    setState(() {
+      _data.remove(fieldName);
+    });
   }
 }
 

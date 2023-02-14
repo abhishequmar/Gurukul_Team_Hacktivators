@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 var docid ="";
 
@@ -10,6 +11,7 @@ class BeginnerSoftSkillsScreen extends StatefulWidget {
 
 class _BeginnerSoftSkillsScreenState extends State<BeginnerSoftSkillsScreen> {
   List<String> _data = [];
+  List<String> _link = [];
 
   @override
   void initState() {
@@ -24,27 +26,13 @@ class _BeginnerSoftSkillsScreenState extends State<BeginnerSoftSkillsScreen> {
         // Add the data to the list
         setState(() {
           _data.add(data["Name"]);
+          _link.add(data["Link"]);
         });
       });
     });
   }
   // function to delete a document
-  void _deleteDocument(String fieldName) async {
-    final firestore = FirebaseFirestore.instance;
-    // Delete the document that contains the given field name
-    await firestore.collection("CommunicationSkillsCourses")
-        .where("Name", isEqualTo: fieldName)
-        .get()
-        .then((querySnapshot) {
-      querySnapshot.docs.forEach((result) {
-        result.reference.delete();
-      });
-    });
-    // Remove the data from the list
-    setState(() {
-      _data.remove(fieldName);
-    });
-  }
+
 
   // function to update a document
   // Function to handle updating the document
@@ -62,14 +50,12 @@ class _BeginnerSoftSkillsScreenState extends State<BeginnerSoftSkillsScreen> {
 
           return ListTile(
             title: Text(_data[index]),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-
-
-              ],
-            ),
-
+            trailing: IconButton(
+              icon: Icon(Icons.link_rounded),
+              onPressed: (){
+                launchUrl(Uri.parse(_link[index]));
+              },
+            )
           );
         },
       ),

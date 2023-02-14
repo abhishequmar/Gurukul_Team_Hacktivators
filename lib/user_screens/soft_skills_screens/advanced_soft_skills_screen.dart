@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 var docid ="";
 
@@ -10,6 +11,7 @@ class AdvancedSoftSkillsScreen extends StatefulWidget {
 
 class _AdvancedSoftSkillsScreenState extends State<AdvancedSoftSkillsScreen> {
   List<String> _data = [];
+  List<String> _link = [];
 
   @override
   void initState() {
@@ -24,6 +26,7 @@ class _AdvancedSoftSkillsScreenState extends State<AdvancedSoftSkillsScreen> {
         // Add the data to the list
         setState(() {
           _data.add(data["Name"]);
+          _link.add(data["Name"]);
         });
       });
     });
@@ -39,20 +42,19 @@ class _AdvancedSoftSkillsScreenState extends State<AdvancedSoftSkillsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Advanced Soft Skills'),
+        title: Text('Advanced Soft Skill Courses'),
       ),
       body: ListView.builder(
         itemCount: _data.length,
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(_data[index]),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-
-
-              ],
-            ),
+            trailing: IconButton(
+              icon: Icon(Icons.link_rounded),
+              onPressed: (){
+                launchUrl(Uri.parse(_link[index]));
+              },
+            )
 
           );
         },

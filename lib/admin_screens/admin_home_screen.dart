@@ -40,83 +40,143 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 10,),
-            TextButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return BeginnerSoftSkillSeeingScreen();
-                        }
-                    ),
-                  );
-                },
-                child: Text('Beginner Soft Skills')),
+            Material(
+              color: Colors.purple,
+              elevation: 0,
+              borderRadius: BorderRadius.circular(30),
+              child: MaterialButton(
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.8,
+                  splashColor: Colors.purpleAccent,
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return BeginnerSoftSkillSeeingScreen();
+                          }
+                      ),
+                    );
+                  },
+                  child: Text('Beginner Soft Skills', style: TextStyle(color: Colors.white))),
+            ),
             SizedBox(height: 10,),
-            TextButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return IntermediateSoftSkillSeeingScreen();
-                        }
-                    ),
-                  );
-                },
-                child: Text('Intermediate Soft Skills')),
+            Material(
+              color: Colors.purple,
+              elevation: 0,
+              borderRadius: BorderRadius.circular(30),
+              child: MaterialButton(
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.8,
+                  splashColor: Colors.purpleAccent,
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return IntermediateSoftSkillSeeingScreen();
+                          }
+                      ),
+                    );
+                  },
+                  child: Text('Intermediate Soft Skills', style: TextStyle(color: Colors.white))),
+            ),
             SizedBox(height: 10,),
-            TextButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return AdvanceSoftSkillSeeingScreen();
-                        }
-                    ),
-                  );
-                },
-                child: Text('Advance Soft Skills')),
+            Material(
+              color: Colors.purple,
+              elevation: 0,
+              borderRadius: BorderRadius.circular(30),
+              child: MaterialButton(
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.8,
+                  splashColor: Colors.purpleAccent,
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return AdvanceSoftSkillSeeingScreen();
+                          }
+                      ),
+                    );
+                  },
+                  child: Text('Advance Soft Skills', style: TextStyle(color: Colors.white))),
+            ),
             SizedBox(height: 10,),
-            TextButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return BeginnerTechSkillSeeingScreen();
-                        }
-                    ),
-                  );
-                },
-                child: Text('Beginner Tech Skills')),
+            Material(
+              color: Colors.purple,
+              elevation: 0,
+              borderRadius: BorderRadius.circular(30),
+              child: MaterialButton(
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.8,
+                  splashColor: Colors.purpleAccent,
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return BeginnerTechSkillSeeingScreen();
+                          }
+                      ),
+                    );
+                  },
+                  child: Text('Beginner Tech Skills', style: TextStyle(color: Colors.white))),
+            ),
             SizedBox(height: 10,),
-            TextButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return IntermediateTechSkillSeeingScreen();
-                        }
-                    ),
-                  );
-                },
-                child: Text('Intermediate Tech Skills')),
+            Material(
+              color: Colors.purple,
+              elevation: 0,
+              borderRadius: BorderRadius.circular(30),
+              child: MaterialButton(
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.8,
+                  splashColor: Colors.purpleAccent,
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return IntermediateTechSkillSeeingScreen();
+                          }
+                      ),
+                    );
+                  },
+                  child: Text('Intermediate Tech Skills', style: TextStyle(color: Colors.white))),
+            ),
             SizedBox(height: 10,),
-            TextButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return AdvanceTechSkillSeeingScreen();
-                        }
-                    ),
-                  );
-                },
-                child: Text('Advance Tech Skills')),
+            Material(
+              color: Colors.purple,
+              elevation: 0,
+              borderRadius: BorderRadius.circular(30),
+              child: MaterialButton(
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.8,
+                  splashColor: Colors.purpleAccent,
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return AdvanceTechSkillSeeingScreen();
+                          }
+                      ),
+                    );
+                  },
+                  child: Text('Advance Tech Skills', style: TextStyle(color: Colors.white),)),
+            ),
             SizedBox(height: 10,),
 
             SizedBox(height: 10,),

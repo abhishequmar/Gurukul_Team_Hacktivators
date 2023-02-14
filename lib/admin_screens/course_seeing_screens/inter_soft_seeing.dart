@@ -33,7 +33,7 @@ class _IntermediateSoftSkillSeeingScreenState extends State<IntermediateSoftSkil
   void _deleteDocument(String fieldName) async {
     final firestore = FirebaseFirestore.instance;
     // Delete the document that contains the given field name
-    await firestore.collection("Courses")
+    await firestore.collection("intermediatesoftskills")
         .where("Name", isEqualTo: fieldName)
         .get()
         .then((querySnapshot) {
@@ -65,7 +65,6 @@ class _IntermediateSoftSkillSeeingScreenState extends State<IntermediateSoftSkil
             child: ListView.builder(
               itemCount: _data.length,
               itemBuilder: (context, index) {
-                final documentReference = FirebaseFirestore.instance.collection("advancedsoftskills").doc(index.toString());
                 return ListTile(
                   title: Text(_data[index]),
                   trailing: Row(

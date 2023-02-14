@@ -34,7 +34,7 @@ class _AdvanceTechSkillSeeingScreenState extends State<AdvanceTechSkillSeeingScr
   void _deleteDocument(String fieldName) async {
     final firestore = FirebaseFirestore.instance;
     // Delete the document that contains the given field name
-    await firestore.collection("Courses")
+    await firestore.collection("advancedtechskills")
         .where("Name", isEqualTo: fieldName)
         .get()
         .then((querySnapshot) {

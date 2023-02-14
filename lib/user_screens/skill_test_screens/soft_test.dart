@@ -1,6 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gurukul_team_hacktivators/user_screens/soft_skills_screens/advanced_soft_skills_screen.dart';
 import 'package:gurukul_team_hacktivators/user_screens/soft_skills_screens/beginner_soft_skills_screen.dart';
 import 'package:gurukul_team_hacktivators/user_screens/soft_skills_screens/intermediate_soft_skills_screen.dart';
@@ -9,14 +7,14 @@ import 'package:gurukul_team_hacktivators/user_screens/soft_skills_screens/inter
 int finalscore=0;
 var docid ="";
 
-class TestScreen extends StatefulWidget {
-  const TestScreen({Key? key}) : super(key: key);
+class SoftSkillsTestScreen extends StatefulWidget {
+  const SoftSkillsTestScreen({Key? key}) : super(key: key);
 
   @override
-  State<TestScreen> createState() => _TestScreenState();
+  State<SoftSkillsTestScreen> createState() => _SoftSkillsTestScreenState();
 }
 
-class _TestScreenState extends State<TestScreen> {
+class _SoftSkillsTestScreenState extends State<SoftSkillsTestScreen> {
 
 
   String? errorMessage;
@@ -38,20 +36,33 @@ class _TestScreenState extends State<TestScreen> {
 
   Widget build(BuildContext context) {
     final Q1 = TextFormField(
-      autofocus: false,
+
       controller: Q1controller,
       keyboardType: TextInputType.number ,
-
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a value';
+        }
+        final intValue = int.tryParse(value);
+        if (intValue == null) {
+          return 'Please enter a valid integer value between 1 and 5';
+        }
+        if (intValue < 1 || intValue > 5) {
+          return 'Please enter a value between 1 and 5';
+        }
+        return null;
+      },
 
       onSaved: (value){
         finalscore += (int.parse(Q1controller.text) as int);
 
       },
+
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.question_answer_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15,20, 15),
-          hintText: "On a scale of 1-5, how confident do you feel when speaking in public or in group settings?",
+          hintText: "",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -63,17 +74,27 @@ class _TestScreenState extends State<TestScreen> {
       autofocus: false,
       controller: Q2controller,
       keyboardType: TextInputType.number ,
-
-
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a value';
+        }
+        final intValue = int.tryParse(value);
+        if (intValue == null) {
+          return 'Please enter a valid integer value between 1 and 5';
+        }
+        if (intValue < 1 || intValue > 5) {
+          return 'Please enter a value between 1 and 5';
+        }
+        return null;
+      },
       onSaved: (value){
         finalscore += (int.parse(Q2controller.text)) as int;
 
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.question_answer_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15,20, 15),
-          hintText: "On a scale of 1-5, how confident do you feel when speaking in public or in group settings?",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -85,7 +106,19 @@ class _TestScreenState extends State<TestScreen> {
       autofocus: false,
       controller: Q3controller,
       keyboardType: TextInputType.number ,
-
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a value';
+        }
+        final intValue = int.tryParse(value);
+        if (intValue == null) {
+          return 'Please enter a valid integer value between 1 and 5';
+        }
+        if (intValue < 1 || intValue > 5) {
+          return 'Please enter a value between 1 and 5';
+        }
+        return null;
+      },
 
       onSaved: (value){
         finalscore += (int.parse(Q3controller.text)as int);
@@ -93,9 +126,8 @@ class _TestScreenState extends State<TestScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.question_answer_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15,20, 15),
-          hintText: "On a scale of 1-5, how confident do you feel when speaking in public or in group settings?",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -107,7 +139,19 @@ class _TestScreenState extends State<TestScreen> {
       autofocus: false,
       controller: Q4controller,
       keyboardType: TextInputType.number ,
-
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a value';
+        }
+        final intValue = int.tryParse(value);
+        if (intValue == null) {
+          return 'Please enter a valid integer value between 1 and 5';
+        }
+        if (intValue < 1 || intValue > 5) {
+          return 'Please enter a value between 1 and 5';
+        }
+        return null;
+      },
 
       onSaved: (value){
         finalscore += (int.parse(Q4controller.text)as int);
@@ -115,9 +159,8 @@ class _TestScreenState extends State<TestScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.question_answer_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15,20, 15),
-          hintText: "On a scale of 1-5, how confident do you feel when speaking in public or in group settings?",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -129,7 +172,19 @@ class _TestScreenState extends State<TestScreen> {
       autofocus: false,
       controller: Q5controller,
       keyboardType: TextInputType.number ,
-
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a value';
+        }
+        final intValue = int.tryParse(value);
+        if (intValue == null) {
+          return 'Please enter a valid integer value between 1 and 5';
+        }
+        if (intValue < 1 || intValue > 5) {
+          return 'Please enter a value between 1 and 5';
+        }
+        return null;
+      },
 
       onSaved: (value){
         finalscore += int.parse(Q5controller.text)as int;
@@ -137,9 +192,8 @@ class _TestScreenState extends State<TestScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.question_answer_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15,20, 15),
-          hintText: "On a scale of 1-5, how confident do you feel when speaking in public or in group settings?",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -151,6 +205,19 @@ class _TestScreenState extends State<TestScreen> {
       autofocus: false,
       controller: Q6controller,
       keyboardType: TextInputType.number ,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a value';
+        }
+        final intValue = int.tryParse(value);
+        if (intValue == null) {
+          return 'Please enter a valid integer value between 1 and 5';
+        }
+        if (intValue < 1 || intValue > 5) {
+          return 'Please enter a value between 1 and 5';
+        }
+        return null;
+      },
 
 
       onSaved: (value){
@@ -159,9 +226,8 @@ class _TestScreenState extends State<TestScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.question_answer_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15,20, 15),
-          hintText: "On a scale of 1-5, how confident do you feel when speaking in public or in group settings?",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -173,6 +239,19 @@ class _TestScreenState extends State<TestScreen> {
       autofocus: false,
       controller: Q7controller,
       keyboardType: TextInputType.number ,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a value';
+        }
+        final intValue = int.tryParse(value);
+        if (intValue == null) {
+          return 'Please enter a valid integer value between 1 and 5';
+        }
+        if (intValue < 1 || intValue > 5) {
+          return 'Please enter a value between 1 and 5';
+        }
+        return null;
+      },
 
 
       onSaved: (value){
@@ -181,9 +260,8 @@ class _TestScreenState extends State<TestScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.question_answer_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15,20, 15),
-          hintText: "On a scale of 1-5, how confident do you feel when speaking in public or in group settings?",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -195,6 +273,19 @@ class _TestScreenState extends State<TestScreen> {
       autofocus: false,
       controller: Q8controller,
       keyboardType: TextInputType.number ,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a value';
+        }
+        final intValue = int.tryParse(value);
+        if (intValue == null) {
+          return 'Please enter a valid integer value between 1 and 5';
+        }
+        if (intValue < 1 || intValue > 5) {
+          return 'Please enter a value between 1 and 5';
+        }
+        return null;
+      },
 
 
       onSaved: (value){
@@ -203,9 +294,8 @@ class _TestScreenState extends State<TestScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.question_answer_sharp),
           contentPadding: EdgeInsets.fromLTRB(20, 15,20, 15),
-          hintText: "On a scale of 1-5, how confident do you feel when speaking in public or in group settings?",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -213,10 +303,7 @@ class _TestScreenState extends State<TestScreen> {
       ),
 
     );
-    String s="";
-    bool visible1 =false;
-    bool visible2 =false;
-    bool visible3 =false;
+
 
 
 
@@ -226,47 +313,57 @@ class _TestScreenState extends State<TestScreen> {
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
+
         splashColor: Colors.blueAccent,
         padding: EdgeInsets.fromLTRB(20, 15,20, 15),
         minWidth: MediaQuery.of(context).size.width,
 
         onPressed: (){
-          finalscore = ((int.parse(Q1controller.text)as int)+(int.parse(Q2controller.text)as int)+(int.parse(Q3controller.text)as int)+(int.parse(Q4controller.text)as int)+(int.parse(Q5controller.text)as int)+(int.parse(Q6controller.text)as int)+(int.parse(Q7controller.text)as int)+(int.parse(Q8controller.text)as int));
-          print(finalscore);
+          if (_formKey.currentState!.validate()) {
+            finalscore = ((int.parse(Q1controller.text) as int) +
+                (int.parse(Q2controller.text) as int) +
+                (int.parse(Q3controller.text) as int) +
+                (int.parse(Q4controller.text) as int) +
+                (int.parse(Q5controller.text) as int) +
+                (int.parse(Q6controller.text) as int) +
+                (int.parse(Q7controller.text) as int) +
+                (int.parse(Q8controller.text) as int));
+            print(finalscore);
 
-            if(finalscore <= 15){
+
+            if (finalscore <= 15) {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context){
+                    builder: (context) {
                       return BeginnerSoftSkillsScreen();
                     }
                 ),
               );
-            }else if(finalscore >15 && finalscore <=30){
+            } else if (finalscore > 15 && finalscore <= 30) {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context){
+                    builder: (context) {
                       return IntermediateSoftSkillsScreen();
                     }
                 ),
               );
-            }else{
+            } else {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context){
+                    builder: (context) {
                       return AdvancedSoftSkillsScreen();
                     }
                 ),
               );
             }
-
+          }
 
         },
         child: Text(
-          "Sign Up",
+          "Submit",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold,
@@ -297,53 +394,58 @@ class _TestScreenState extends State<TestScreen> {
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(
+                onWillPop: () async {
+                  final isValid = _formKey.currentState?.validate() ?? false;
+                  return isValid;
+                },
                 key: _formKey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-
+                    
+                    Text("Soft Skills Quiz", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.purple),),
                     SizedBox(height: 45),
-                    Text('1-5, how knowledgeable do you feel about the latest technologies and tools in your field of study?'),
+                    Text('Q1)  On a scale of 1-5, how knowledgeable do you feel about the latest technologies and tools in your field of study?'),
                     SizedBox(height: 20),
                     Q1,
 
                     SizedBox(height: 20),
-                    Text('On a scale of 1-5, how proficient are you with using various software or programming languages?'),
+                    Text('Q2)  On a scale of 1-5, how proficient are you with using various software or programming languages?'),
 
                     SizedBox(height: 20),
                     Q2,
                     SizedBox(height: 20),
-                    Text('On a scale of 1-5, how well do you troubleshoot technical problems and find solutions?'),
+                    Text('Q3)  On a scale of 1-5, how well do you troubleshoot technical problems and find solutions?'),
 
                     SizedBox(height: 20),
                     Q3,
                     SizedBox(height: 20),
-                    Text('On a scale of 1-5, how comfortable are you with learning and adapting to new technologies and tools?'),
+                    Text('Q4)  On a scale of 1-5, how comfortable are you with learning and adapting to new technologies and tools?'),
 
                     SizedBox(height: 20),
                     Q4,
                     SizedBox(height: 20),
-                    Text('On a scale of 1-5, how confident do you feel when speaking in public or in group settings?'),
+                    Text('Q5)  On a scale of 1-5, how confident do you feel when speaking in public or in group settings?'),
 
                     SizedBox(height: 20),
                     Q5,
                     SizedBox(height: 20),
-                    Text('On a scale of 1-5, how confident do you feel in writing reports, emails, or other professional documents?'),
+                    Text('Q6)  On a scale of 1-5, how confident do you feel in writing reports, emails, or other professional documents?'),
 
                     SizedBox(height: 20),
                     Q6,
                     SizedBox(height: 20),
-                    Text('On a scale of 1-5, how comfortable are you expressing your ideas in writing?'),
+                    Text('Q7)  On a scale of 1-5, how comfortable are you expressing your ideas in writing?'),
 
                     SizedBox(height: 20),
                     Q7,
                     SizedBox(height: 20),
-                    Text('On a scale of 1-5, how effectively do you communicate through writing?'),
+                    Text('Q8)  On a scale of 1-5, how effectively do you communicate through writing?'),
 
                     SizedBox(height: 20),
                     Q8,
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
                     submitButton,
                     SizedBox(height: 15),
 
